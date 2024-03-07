@@ -14,6 +14,8 @@ import (
 func main() {
 	// 指定要访问的网页 URL
 
+	fmt.Println("anticher V 1.1 仙区自由组织开发")
+
 	fmt.Println("请输入作业精灵url")
 	var url string
 	fmt.Scanln(&url)
@@ -44,7 +46,7 @@ func main() {
 	matches := re.FindAllStringSubmatch(string(body), -1)
 
 	// 打印匹配的 URL
-	fmt.Println("1111111Found URLs:")
+	fmt.Println("正则匹配答案页面中")
 	for _, match := range matches {
 
 		durl := string(match[1])
@@ -79,12 +81,14 @@ func main() {
 
 			// 打印匹配的 URL
 			fmt.Println("Found URLs:")
+
 			for _, match := range matches {
 
 				eurl := string(match[1])
+
 				// 检测字符串中是否包含 .jpg?x-oss-process=
 				if strings.Contains(eurl, ".jpg?x-oss-process=") {
-					fmt.Println("gut")
+					fmt.Println("seig heil")
 
 					// 发起 HTTP 请求获取图片内容
 					resp, err := http.Get(eurl)
@@ -110,7 +114,7 @@ func main() {
 						return
 					}
 
-					fmt.Println("Image downloaded and saved as", fileName)
+					fmt.Println("答案下载完成 仙区自由组织万岁，打倒腐败教育局和学校，以及邪恶培训机构，农民思想的家长！！", fileName)
 				}
 			}
 		}
